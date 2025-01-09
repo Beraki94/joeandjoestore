@@ -1,0 +1,146 @@
+/* Swiper container settings */
+.brand-slider {
+  width: 100%;
+  padding: 1rem 0;
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+}
+
+/* Default Swiper styling for slides */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  overflow: hidden;
+}
+
+/* Card styles */
+.swiper-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #0c8b5b;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 1000px;
+  height:50vh ;
+}
+
+.swiper-card:hover {
+  transform: translateY(-5px);
+}
+
+.swiper-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.swiper-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.swiper-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-button:hover {
+  background-color: #45a049;
+}
+
+/* Swiper navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #333;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  top: 50%; /* Center the arrows vertically */
+  transform: translateY(-50%);
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #4caf50;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .swiper-card {
+    padding: 0.75rem;
+  }
+
+  .swiper-title {
+    font-size: 0.9rem;
+  }
+
+  .swiper-button {
+    font-size: 0.8rem;
+  }
+}
+
+
+
+/* Brand Card */
+.brand-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.brand-card__image {
+  width: 100%;
+  max-width: 150px;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.brand-card__name {
+  margin: 12px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.brand-card__button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background-color: #184975;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.brand-card__button:hover {
+  background-color: #fc6c3a;
+  transform: translateY(-2px);
+}

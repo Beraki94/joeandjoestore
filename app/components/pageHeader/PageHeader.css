@@ -1,0 +1,15 @@
+.page-header {
+    background-color: #184975;
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    border-radius: 8px;
+    height: 250px;
+  }
+  
+  .page-header__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  

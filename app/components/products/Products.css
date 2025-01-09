@@ -1,0 +1,123 @@
+/* Product card container */
+.product-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   /* Consistent card size */
+  height: 100%; /* Maintain consistent height */
+  margin: auto; /* Center card in the grid */
+  padding: 12px;
+}
+
+/* Hover effect for cards */
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Product image */
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 4 / 4.75; /* Maintain consistent aspect ratio */
+  object-fit: cover; /* Ensure the image covers the space without distortion */
+  border-bottom: 1px solid #eaeaea;
+}
+
+/* Details section */
+.product-card__details {
+  align-self: flex-start;
+}
+
+/* Product title */
+.product-card__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.4;
+  min-height: 48px; /* Ensures consistent height for titles */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; /* Prevents long titles from breaking the layout */
+}
+
+/* Product brand */
+.product-card__brand {
+  margin-top: 4px;
+  font-size: 1rem;
+  color: #666;
+  
+}
+
+/* Pricing section */
+.product-card__pricing {
+  gap: 8px;
+  margin: 0.5rem 0;
+}
+
+/* Original price (slashed) */
+.product-card__original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Current price */
+.product-card__price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fca311;
+}
+
+/* Add to Cart button */
+.product-card__button {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #184975;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-card__button:hover {
+  background-color: #103760;
+  transform: translateY(-2px);
+}
+
+/* Product list container */
+
+
+  
+  /* Details section */
+
+  
+  /* Product title */
+ 
+  
+  /* Product price */
+
+ 
+  
+  /* Add to Cart button */
+ 
+  
+  
+  /* Product list container */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto; /* Center the grid on the page */
+  }
+  
+  

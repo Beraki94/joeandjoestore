@@ -1,0 +1,17 @@
+.brand-page {
+    padding: 2rem;
+  }
+  
+  .brand-page__title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #184975;
+  }
+  
+  .brand-page__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  

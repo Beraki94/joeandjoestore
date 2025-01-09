@@ -1,0 +1,107 @@
+/* Header.css */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header__badge{
+    background-color: #606c38 ;
+    color: white;
+    width: 100%;
+    padding: 4px;
+  }
+  
+  .header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px; /* 8-point system */
+  }
+  
+  .header__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .header__nav {
+    display: flex;
+    gap: 16px; /* 8-point system */
+  }
+  
+  .header__nav-link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: #666;
+    padding: 8px 16px; /* 8-point system */
+    border-radius: 4px; /* Subtle rounding for better aesthetics */
+    transition: background-color 0.3s ease;
+  }
+  
+  .header__nav-link--active {
+    color: #fff;
+    background-color: #606c38;
+  }
+  
+  .header__nav-link:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .header__search {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 8-point system */
+  }
+  
+  .header__search-input {
+    padding: 12px; /* 8-point system */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    width: 300px;
+  }
+  
+  .header__search-btn {
+    background-color: #606c38;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .header__icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+  
+  @media (max-width: 1065px) {
+    .header__container {
+      flex-direction: column;
+      gap: 24px; /* Larger gap for stacked layout */
+    }
+  
+    .header__nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px; /* Adjust gap for smaller screens */
+    }
+  
+    .header__search {
+      width: 100%;
+    }
+  }
+  
