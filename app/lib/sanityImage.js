@@ -9,7 +9,11 @@ export function urlFor(source) {
 }
 
 // Generate video URLs
-export function getVideoUrl(source) {
-  const videoId = source?.asset?._ref?.split("-")[1]; // Extract the video ID from the reference
-  return `https://cdn.sanity.io/files/${client.config.projectId}/${client.config.dataset}/${videoId}.mp4`; // Construct the video URL
+export function getFileUrl(asset) {
+  if (!asset || !asset._ref) {
+    return ''; // Return empty if the asset is not valid
+  }
+
+  // Construct the video URL for video files using the asset reference
+  return `https://cdn.sanity.io/files/${client.config().projectId}/${client.config().dataset}/${asset._ref}`;
 }

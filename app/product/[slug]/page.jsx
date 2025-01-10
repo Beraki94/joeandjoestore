@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { CaretLeft, CaretRight } from "phosphor-react"; // Import Phosphor Icons
 import { use } from "react";
 import { client } from "../../lib/sanity";
 import { urlFor } from "../../lib/sanityImage";
@@ -9,7 +10,7 @@ import "../../product/productDetails.css";
 const ProductDetails = ({ params: paramsPromise }) => {
   const params = use(paramsPromise); // Unwrap the params promise
   const [product, setProduct] = useState(null);
-  const [mainImage, setMainImage] = useState("/placeholder.jpg");
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -28,9 +29,6 @@ const ProductDetails = ({ params: paramsPromise }) => {
 
         if (data) {
           setProduct(data);
-          if (data.images?.[0]) {
-            setMainImage(urlFor(data.images[0]).url());
-          }
         }
       } catch (error) {
         console.error("Error fetching product details:", error);
@@ -42,13 +40,38 @@ const ProductDetails = ({ params: paramsPromise }) => {
     }
   }, [params.slug]);
 
+  const handleNextImage = () => {
+    setCurrentIndex((prevIndex) =>
+      product.images && prevIndex < product.images.length - 1 ? prevIndex + 1 : 0
+    );
+  };
+
+  const handlePrevImage = () => {
+    setCurrentIndex((prevIndex) =>
+      product.images && prevIndex > 0 ? prevIndex - 1 : product.images.length - 1
+    );
+  };
+
   if (!product) {
     return <div>Loading...</div>;
   }
 
+  const mainImage = product.images?.[currentIndex]
+    ? urlFor(product.images[currentIndex]).url()
+    : "/placeholder.jpg";
+
   return (
     <div className="product-details">
       <div className="product-images">
+        <div className="main-image">
+          <img src={mainImage} alt="Main product view" />
+          <button className="prev-arrow" onClick={handlePrevImage}>
+            <CaretLeft size={24} weight="bold" />
+          </button>
+          <button className="next-arrow" onClick={handleNextImage}>
+            <CaretRight size={24} weight="bold" />
+          </button>
+        </div>
         <div className="image-thumbnails">
           {product.images?.map((image, index) => (
             <img
@@ -56,14 +79,11 @@ const ProductDetails = ({ params: paramsPromise }) => {
               src={urlFor(image).url()}
               alt={`Thumbnail ${index + 1}`}
               className={`thumbnail ${
-                mainImage === urlFor(image).url() ? "active" : ""
+                currentIndex === index ? "active" : ""
               }`}
-              onClick={() => setMainImage(urlFor(image).url())}
+              onClick={() => setCurrentIndex(index)}
             />
           ))}
-        </div>
-        <div className="main-image">
-          <img src={mainImage} alt="Main product view" />
         </div>
       </div>
       <div className="product-info">

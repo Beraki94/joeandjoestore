@@ -23,7 +23,6 @@
     text-align: center;
     z-index: 1; /* Ensures content appears above the video */
     padding: var(--spacing-4);
-    color: white; /* Text color */
   }
   
   .hero__title {
