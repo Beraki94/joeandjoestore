@@ -14,20 +14,25 @@
 /* Variables */
 :root {
   /* Primary Colors */
-  --primary-color: #004d40; /* Teal */
-  --primary-color-light: #4db6ac;
-  --secondary-color: #00796b;
-  --secondary-color-light: #b2dfdb;
+--primary-color: #606c38; /* Muted green */
+--primary-color-light: #92ac6a; /* Softer green */
+--secondary-color: #283618; /* Deep olive green */
+--secondary-color-light: #5b5d44; /* Lighter olive green */
 
-  /* Accent Colors */
-  --accent-color: #ff6f00; /* Amber */
-  --accent-color-light: #ffd54f;
+/* Accent Colors */
+--accent-color: #dda15e; /* Warm gold */
+--accent-color-light: #ffd494; /* Light golden tone */
 
-  /* Neutral Colors */
-  --neutral-dark: #212121;
-  --neutral-medium: #757575;
-  --neutral-light: #eeeeee;
-  --neutral-white: #ffffff;
+/* Neutral Colors */
+--neutral-dark: #343a1a; /* Dark greenish-brown */
+--neutral-medium: #7a7f5a; /* Muted medium green-gray */
+--neutral-light: #faf0e6; /* Soft cream */
+--neutral-white: #ffffff; /* Pure white */
+
+/* State Colors */
+--error-color: #bc4749; /* Subtle red */
+--success-color: #468b3d; /* Rich green */
+
 
   /* Spacing (8-point system) */
   --spacing-1: 0.5rem; /* 8px */
@@ -39,12 +44,14 @@
   --spacing-8: 4rem;   /* 64px */
 
   /* Font Sizes */
-  --font-size-base: 16px;
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-md: 1rem;     /* 16px */
-  --font-size-lg: 1.25rem;  /* 20px */
-  --font-size-xl: 1.5rem;   /* 24px */
-  --font-size-xxl: 2rem;    /* 32px */
+--font-size-base: 16px;       /* Base font size */
+--font-size-sm: 0.875rem;     /* 14px */
+--font-size-md: 1rem;         /* 16px */
+--font-size-lg: 1.25rem;      /* 20px */
+--font-size-xl: 1.5rem;       /* 24px */
+--font-size-2xl: 2rem;        /* 32px */
+--font-size-xxl: 3rem;        /* 48px */
+
 
   /* Fonts */
   --font-family-base: "Roboto", sans-serif;
@@ -86,7 +93,7 @@ img {
 
 /* Containers */
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }

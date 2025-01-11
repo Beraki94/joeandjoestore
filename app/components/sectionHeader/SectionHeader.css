@@ -1,0 +1,20 @@
+.section-header {
+    margin-bottom: var(--spacing-5);
+  }
+  
+  .section-header--left {
+    text-align: left;
+  }
+  
+  .section-header__title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-1);
+  }
+  
+  .section-header__subtitle {
+    font-size: var(--font-size-md);
+    color: var(--neutral-medium);
+  }
+  

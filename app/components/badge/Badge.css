@@ -1,121 +1,118 @@
+/* Badge Section Container */
+.badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-4);
+  width: 100%;
+  padding: var(--spacing-5);
+  margin: var(--spacing-6) 0;
+  background-color: var(--neutral-light);
+  overflow: hidden;
+}
 
+/* Video Section Placeholder */
+.badge__video {
+  flex: 1;
+  max-width: 50%;
+  aspect-ratio: 16 / 9;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: var(--spacing-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
 
-  /* Badge Section Container */
+.badge__overlay-text {
+  color: var(--primary-color);
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Badge Content Section */
+.badge__content {
+  flex: 1;
+  text-align: center;
+  padding: var(--spacing-5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--spacing-4);
+}
+
+/* Sub-title Styling */
+.badge__sub-title {
+  font-size: var(--font-size-md);
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+/* Title Styling */
+.badge__title {
+  font-size: var(--font-size-xxl);
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+/* Button Styling */
+.badge__btn {
+  padding: var(--spacing-2) var(--spacing-5);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--neutral-white);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--spacing-2);
+  cursor: pointer;
+  transition: var(--transition);
+  width: 40%;
+  margin: 0 auto;
+}
+
+.badge__btn:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
   .badge {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--spacing-4);
-    width: 100%;
-    padding: var(--spacing-4);
-    margin: 64px 0;
-    background-color: #f9f9f9;
-    overflow: hidden;
+    flex-wrap: wrap;
   }
-  
-  /* Video Section Placeholder */
-  .badge__video {
-    flex: 1; /* Ensure the video takes up equal space */
-    max-width: 50%;
-    aspect-ratio: 16 / 9;
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .badge__overlay-text {
-    color: var(--primary-color);
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
-  }
-  
-  /* Badge Content Section */
+
+  .badge__video,
   .badge__content {
-    flex: 1; /* Ensure the content takes up equal space */
+    flex: none;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
-    padding: var(--spacing-4);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: var(--spacing-3);
   }
-  
-  /* Sub-title Styling */
-  .badge__sub-title {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--secondary-color);
-  }
-  
-  /* Title Styling */
+
   .badge__title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--text-color);
-    line-height: 1.4;
+    font-size: var(--font-size-xl);
   }
-  
-  /* Button Styling */
+
   .badge__btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: var(--transition);
-    width:  40%;
-    margin: 0 auto;
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-2) var(--spacing-4);
   }
-  
-  .badge__btn:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-2px);
+}
+
+@media screen and (max-width: 480px) {
+  .badge {
+    padding: var(--spacing-4);
   }
-  
-  /* Responsive Adjustments */
-  @media screen and (max-width: 1024px) {
-    .badge {
-      flex-wrap: wrap; /* Stack content vertically for smaller screens */
-    }
-  
-    .badge__video,
-    .badge__content {
-      flex: none;
-      width: 100%;
-      max-width: 100%;
-      text-align: center;
-    }
-  
-    .badge__title {
-      font-size: 1.75rem;
-    }
-  
-    .badge__btn {
-      font-size: 0.9rem;
-      padding: 0.6rem 1.2rem;
-    }
+
+  .badge__title {
+    font-size: var(--font-size-lg);
   }
-  
-  @media screen and (max-width: 480px) {
-    .badge {
-      padding: var(--spacing-3);
-    }
-  
-    .badge__title {
-      font-size: 1.5rem;
-    }
-  
-    .badge__btn {
-      font-size: 0.8rem;
-      padding: 0.5rem 1rem;
-    }
+
+  .badge__btn {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-1) var(--spacing-3);
   }
-  
+}

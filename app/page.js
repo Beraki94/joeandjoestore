@@ -3,9 +3,9 @@ import styles from "./page.module.css";
 import Hero from "./components/hero/Hero";
 import Features from "./components/features/Features";
 import BrandSlider from "./components/brands/BrandSlider";
-import ProductList from "./components/products/ProductList";
 import Badge from "./components/badge/Badge";
 import CategorySection from "./components/categorySection/CategorySection";
+import ProductSlider from "./components/products/ProductSlider";
 
 
 
@@ -16,7 +16,7 @@ export default function Home() {
       <Hero />
       <Features />
       <BrandSlider />
-      <ProductList />
+      <ProductSlider />
       <Badge />
       <CategorySection />
       </div>

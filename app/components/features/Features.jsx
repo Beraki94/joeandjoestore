@@ -18,7 +18,7 @@ const features = [
   },
   {
     id: 3,
-    title: "Largest selection in the market",
+    title: "Largest market selection",
     description: "We pride ourselves on having the best selection of bags in the wholesale market.",
     icon: Sparkle,
   },
@@ -27,17 +27,16 @@ const features = [
 const Features = () => {
   return (
     <section className="features">
-      <div className="features__container container">
+      <div className="features__container">
         {features.map((feature) => (
           <div key={feature.id} className="features__item">
-            {/* Icon */}
-            <feature.icon size={32} color="var(--primary-color)" className="features__icon" />
-            
-            {/* Title */}
-            <h3 className="features__title">{feature.title}</h3>
-
-            {/* Description */}
-            <p className="features__description">{feature.description}</p>
+            <div className="features__icon-wrapper">
+              <feature.icon size={24} color="var(--primary-color)" />
+            </div>
+            <div className="features__content">
+              <h3 className="features__title">{feature.title}</h3>
+              <p className="features__description">{feature.description}</p>
+            </div>
           </div>
         ))}
       </div>

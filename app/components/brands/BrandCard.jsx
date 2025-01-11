@@ -10,10 +10,12 @@ const BrandCard = ({ name, image, link }) => {
       <Link href={link}>
         <img src={image} alt={name} className="brand-card__image" />
       </Link>
-      <h3 className="brand-card__name">{name}</h3>
-      <Link href={link} className="brand-card__button">
-        Shop Now
-      </Link>
+      <div className="brand-card__content">
+        <h3 className="brand-card__name">{name}</h3>
+        <Link href={link} className="brand-card__button">
+          Shop Now
+        </Link>
+      </div>
     </div>
   );
 };
