@@ -45,8 +45,8 @@
 
 .brand-card__content{
   position: absolute;
-  bottom: 15;
-  left: 15;
+  bottom: 10%;
+  left: 10%;
 }
 .brand-card__name {
   font-weight: bold;
