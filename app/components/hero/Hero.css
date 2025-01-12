@@ -7,7 +7,7 @@
   align-items: center;
   overflow: hidden;
   border: 1px solid red;
-  border-radius: var(--spacing-1);
+  border-radius: var(--spacing-4);
 }
 
 .hero__video {

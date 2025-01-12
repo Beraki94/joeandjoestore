@@ -1,21 +1,27 @@
 .category-section {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
-  margin: 2rem 0;
+  margin: 4rem 0;
 }
 
+.category-layout{
+  display: flex;
+  gap: 1rem;
+
+}
 .category-navigation {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  position: sticky; /* Keeps it fixed within the section */
-  top: 1rem; /* Adjust based on your header height */
-  width: 25%; /* Matches the original layout width */
-  background: #fff; /* Ensures a clean background */
+  gap: 0.5rem;
+  position: sticky;
+  top: 1rem;
+  width: 25%;
+  background: #fff;
   padding: 1rem;
-  z-index: 100; /* Keeps it above other elements */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-  height: fit-content; /* Makes the sticky navigation adjust to content */
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: fit-content;
 }
 
 .category-tab {
@@ -30,36 +36,34 @@
 
 .category-tab.active,
 .category-tab:hover {
-  background: #184975;
+  background: var(--primary-color);
   color: white;
 }
 
 .category-items {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .category-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  justify-items: center;
-  align-items: start;
-  min-height: 300px;
-  position: relative;
+  gap: 1rem;
+}
+
+.shop-more-container {
+  text-align: center;
 }
 
 .shop-more-button {
-  grid-column: span 3; /* Makes the button span the full grid width */
-  justify-self: center;
-  align-self: center;
   display: inline-block;
-  width: auto;
-  margin: 2rem auto 0 auto;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: 500;
   color: #fff;
-  background-color: #184975;
+  background-color: var(--primary-color);
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -67,23 +71,17 @@
 }
 
 .shop-more-button:hover {
-  background-color: #fc6c3a;
+  background-color: var(--primary-color-light);
   transform: translateY(-2px);
 }
 
 .empty-state-container {
-  grid-column: span 3; /* Spans the entire grid width */
-  display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center; /* Center-align contents horizontally */
-  justify-content: center; /* Center-align contents vertically */
   text-align: center;
-  min-height: 300px; /* Ensures a consistent height for the empty state */
+  min-height: 300px;
 }
 
 .empty-state {
   font-size: 1.2rem;
   color: #888;
-  margin-bottom: 1rem; /* Adds spacing between message and button */
+  margin-bottom: 1rem;
 }
-

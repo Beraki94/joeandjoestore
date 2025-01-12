@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { client } from "../../lib/sanity";
 import { urlFor } from "../../lib/sanityImage";
 import ProductCard from "../products/ProductCard";
+import SectionHeader from "../sectionHeader/SectionHeader";
 import Link from "next/link";
 import "./CategorySection.css";
 
@@ -13,7 +14,6 @@ const CategorySection = ({ initialCategories = [], initialProducts = [] }) => {
   const [products, setProducts] = useState(initialProducts);
   const [isLoading, setIsLoading] = useState(false);
 
-  // Fetch categories on mount if not passed via SSR/props
   useEffect(() => {
     if (initialCategories.length === 0) {
       client
@@ -23,7 +23,6 @@ const CategorySection = ({ initialCategories = [], initialProducts = [] }) => {
     }
   }, [initialCategories]);
 
-  // Fetch products based on active category
   useEffect(() => {
     setIsLoading(true);
 
@@ -62,51 +61,65 @@ const CategorySection = ({ initialCategories = [], initialProducts = [] }) => {
 
   return (
     <section className="category-section">
-      <div className="category-navigation">
-        <button
-          className={`category-tab ${activeCategory === "shop-all" ? "active" : ""}`}
-          onClick={() => setActiveCategory("shop-all")}
-        >
-          Shop All
-        </button>
-        {categories.map((category) => (
+      {/* Section Header */}
+      <SectionHeader
+        title="Our Categories"
+        subtitle="Explore a variety of products tailored just for you."
+      />
+
+      <div className="category-layout">
+        {/* Sticky Navigation */}
+        <div className="category-navigation">
           <button
-            key={category._id}
-            className={`category-tab ${activeCategory === category._id ? "active" : ""}`}
-            onClick={() => setActiveCategory(category._id)}
+            className={`category-tab ${activeCategory === "shop-all" ? "active" : ""}`}
+            onClick={() => setActiveCategory("shop-all")}
           >
-            {category.title}
+            Shop All
           </button>
-        ))}
-      </div>
+          {categories.map((category) => (
+            <button
+              key={category._id}
+              className={`category-tab ${activeCategory === category._id ? "active" : ""}`}
+              onClick={() => setActiveCategory(category._id)}
+            >
+              {category.title}
+            </button>
+          ))}
+        </div>
 
-      <div className="category-items category-list">
-        {isLoading ? (
-          <p>Loading products...</p>
-        ) : products.length ? (
-          products.slice(0, 9).map((product) => (
-            <ProductCard
-              key={product._id}
-              image={product.imageUrl}
-              title={product.name}
-              price={`₦${product.price}`}
-              brand={product.brandName || "Unknown Brand"}
-            />
-          ))
-        ) : (
-          <div className="empty-state-container">
-            <p className="empty-state">No products found for this category.</p>
-            <Link href="/shop-all" className="shop-more-button">
-              Shop More
-            </Link>
-          </div>
-        )}
-
-        {products.length > 0 && (
-          <Link href="/shop-all" className="shop-more-button">
-            Shop More
-          </Link>
-        )}
+        {/* Product List */}
+        <div className="category-items">
+          {isLoading ? (
+            <p>Loading products...</p>
+          ) : products.length ? (
+            <>
+              <div className="category-list">
+                {products.slice(0, 9).map((product) => (
+                  <ProductCard
+                    key={product._id}
+                    image={product.imageUrl}
+                    title={product.name}
+                    price={`₦${product.price}`}
+                    originalPrice={`₦${product.originalPrice}`}
+                    brand={product.brandName || "Unknown Brand"}
+                  />
+                ))}
+              </div>
+              <div className="shop-more-container">
+                <Link href="/shop-all" className="shop-more-button">
+                  Shop More
+                </Link>
+              </div>
+            </>
+          ) : (
+            <div className="empty-state-container">
+              <p className="empty-state">No products found for this category.</p>
+              <Link href="/shop-all" className="shop-more-button">
+                Shop More
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

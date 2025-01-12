@@ -7,7 +7,7 @@ const Badge = () => {
   return (
     <section className="badge">
       <div className="badge__video">
-        <h1 className="badge__overlay-text">Who We Are</h1>
+        <h2 className="badge__overlay-text">Who We Are</h2>
       </div>
       <div className="badge__content">
         <p className="badge__sub-title">New products every week</p>
