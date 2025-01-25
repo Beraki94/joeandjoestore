@@ -10,13 +10,13 @@
   overflow: hidden;
   background-color: var(--neutral-light);
   border-radius: var(--spacing-4);
-  border: 1px solid red;
+  border: 1px solid var(--primary-color);
 }
 
 /* Video Section Placeholder */
 .badge__video {
-  flex: 1;
-  max-width: 50%;
+  width: 50%;
+  height: 450px;
   aspect-ratio: 16 / 9;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: var(--spacing-3);

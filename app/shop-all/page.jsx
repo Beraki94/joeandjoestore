@@ -23,24 +23,24 @@ const ShopPage = () => {
           originalPrice,
           images[0],
           categories,
-          slug, // Include slug here
+          slug,
           "brandName": brand[0]->name
         }`
       ),
-      
     ])
       .then(([categoryData, productData]) => {
         setCategories(categoryData);
         setProducts(
           productData.map((product) => ({
             ...product,
-            imageUrl: product.images ? urlFor(product.images).url() : "/placeholder.jpg",
-            slug: product.slug, // Ensure slug is included
+            imageUrl: product.images
+              ? urlFor(product.images).url()
+              : "/placeholder.jpg",
           }))
-        );        
+        );
       })
       .catch(console.error);
-  }, []);  
+  }, []);
 
   const filteredProducts =
     activeCategory === "all"
@@ -50,11 +50,13 @@ const ShopPage = () => {
         );
 
   return (
-    <div className="shop-page">
+    <div className="shop-page container">
       <PageHeader title="Shop All Products" />
       <div className="shop-page__categories">
         <button
-          className={`shop-category ${activeCategory === "all" ? "active" : ""}`}
+          className={`shop-category ${
+            activeCategory === "all" ? "active" : ""
+          }`}
           onClick={() => setActiveCategory("all")}
         >
           All
@@ -62,7 +64,9 @@ const ShopPage = () => {
         {categories.map((category) => (
           <button
             key={category._id}
-            className={`shop-category ${activeCategory === category._id ? "active" : ""}`}
+            className={`shop-category ${
+              activeCategory === category._id ? "active" : ""
+            }`}
             onClick={() => setActiveCategory(category._id)}
           >
             {category.title}
@@ -79,11 +83,8 @@ const ShopPage = () => {
               price={product.price}
               originalPrice={product.originalPrice}
               brand={product.brandName}
-              slug={product.slug.current} // Ensure slug exists here
+              slug={product.slug.current}
             />
-
-
-
           ))
         ) : (
           <p>No products available for this category.</p>

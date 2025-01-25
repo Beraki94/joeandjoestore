@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { client } from "../lib/sanity";
 import { urlFor } from "../lib/sanityImage";
 import BrandCard from "../components/brands/BrandCard";
+import PageHeader from "../components/pageHeader/PageHeader";
 import "./brandPage.css";
 
 const BrandPage = () => {
@@ -31,23 +32,23 @@ const BrandPage = () => {
     fetchBrands();
   }, []);
 
-  if (brands.length === 0) {
-    return <div>Loading...</div>;
-  }
-
   return (
-    <div className="brand-page">
-      <h1 className="brand-page__title">Explore Our Brands</h1>
-      <div className="brand-page__grid">
-        {brands.map((brand, index) => (
-          <BrandCard
-            key={index}
-            name={brand.name}
-            image={urlFor(brand.primaryLogo).url()}
-            link={`/brand/${brand.slug.current}`} // Correct path
-          />
-        ))}
-      </div>
+    <div className="brand-page container">
+      <PageHeader title="Explore Our Brands" />
+      {brands.length === 0 ? (
+        <div className="brand-page__loading">Loading brands...</div>
+      ) : (
+        <div className="brand-page__grid">
+          {brands.map((brand) => (
+            <BrandCard
+              key={brand.slug.current}
+              name={brand.name}
+              image={urlFor(brand.primaryLogo).url()}
+              link={`/brand/${brand.slug.current}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

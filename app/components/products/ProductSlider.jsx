@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import { client } from "../../lib/sanity";
 import { urlFor } from "../../lib/sanityImage";
-import SectionHeader from "../sectionHeader/SectionHeader"
+import SectionHeader from "../sectionHeader/SectionHeader";
 import ProductCard from "../products/ProductCard";
 import Link from "next/link";
 import "swiper/css";
@@ -53,12 +53,12 @@ const ProductSlider = () => {
   return (
     <div className="product-slider">
       <div className="product-slider__title">
-      <SectionHeader
-        title="Exclusive Market Picks"
-        subtitle="Check out our unique designs"
-        align="center"
-      />
-      <Link href="./shop-all" className="product-slider__link">See All</Link>
+        <SectionHeader
+          title="Exclusive Market Picks"
+          subtitle="Check out our unique designs"
+          align="center"
+        />
+        <Link href="./shop-all" className="product-slider__link">See All</Link>
       </div>
       <Swiper
         modules={[Navigation, Autoplay]}
@@ -77,7 +77,7 @@ const ProductSlider = () => {
           576: { slidesPerView: 2 },
           0: { slidesPerView: 1 },
         }}
-        className="swiper-container"
+        
       >
         {products.length > 0 ? (
           products.map((product) => (

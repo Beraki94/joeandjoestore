@@ -59,7 +59,7 @@ const BlogPage = () => {
   };
 
   return (
-    <div className="blog-page">
+    <div className="blog-page container">
       <PageHeader title="Fashion Blogs" />
       <div className="blog-page__content">
         {currentPosts.map((post) => (

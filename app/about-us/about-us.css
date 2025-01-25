@@ -1,59 +1,166 @@
 .about-page {
-    padding: 2rem;
-  }
   
-  .about-header {
-    text-align: center;
-    background-color: #f8f9fa;
-    padding: 2rem 0;
-  }
-  
-  .about-header h1 {
-    font-size: 2.5rem;
-    color: #333;
-  }
-  
+}
+
+.about-company {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-5);
+}
+
+.about-company__content {
+  flex: 1 1 60%;
+  max-width: 60%;
+  text-align: justify;
+}
+
+.about-company__description,
+.about-company__journey {
+  font-size: var(--font-size-md);
+  color: var(--neutral-medium);
+  margin-bottom: var(--spacing-4);
+  line-height: 1.6;
+}
+
+.about-company h2,
+.about-company h3 {
+  margin-bottom: var(--spacing-3);
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+}
+
+.about-company__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: var(--spacing-5);
+}
+
+.about-company__list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  font-size: var(--font-size-md);
+  color: var(--neutral-dark);
+  margin-bottom: var(--spacing-3);
+}
+
+.about-company__icon {
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+
+.about-company__badge {
+  flex: 1 1 35%;
+  max-width: 35%;
+  background-color: var(--neutral-light);
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.about-company__badge h3 {
+  font-size: var(--font-size-lg);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-3);
+}
+
+.about-company__badge p {
+  font-size: var(--font-size-md);
+  color: var(--neutral-dark);
+  margin-bottom: var(--spacing-4);
+}
+
+.about-company__badge img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  margin-bottom: var(--spacing-4);
+  border-radius: var(--spacing-2);
+  object-fit: cover;
+}
+
+.about-company__badge button {
+  background-color: var(--primary-color);
+  color: var(--neutral-white);
+  padding: var(--spacing-3) var(--spacing-5);
+  border: none;
+  border-radius: var(--spacing-1);
+  font-size: var(--font-size-md);
+  cursor: pointer;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.about-company__badge button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* About Team Section */
+.about-team {
+  margin-top: var(--spacing-6);
+  margin-bottom: var(--spacing-6);
+}
+
+.about-team h2 {
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-5);
+}
+
+.about-team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-5);
+}
+
+.team-member {
+  background-color: var(--neutral-white);
+  border-radius: var(--spacing-2);
+  padding: var(--spacing-4);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+}
+
+.team-member:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.team-member__image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--spacing-3);
+}
+
+.team-member__name {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  margin-bottom: var(--spacing-2);
+  color: var(--neutral-dark);
+}
+
+.team-member__role {
+  font-size: var(--font-size-md);
+  color: var(--neutral-medium);
+  margin-bottom: var(--spacing-3);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .about-company {
-    margin: 2rem 0;
+    flex-direction: column;
   }
-  
-  .about-company h3 {
-    margin: 1rem 0;
+
+  .about-company__content,
+  .about-company__badge {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
-  
-  .about-company ul {
-    list-style: disc;
-    margin-left: 2rem;
-  }
-  
-  .about-team {
-    margin-top: 3rem;
-  }
-  
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-  }
-  
-  .team-member {
-    text-align: center;
-  }
-  
-  .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-  }
-  
-  .team-member h4 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .team-member p {
-    font-size: 0.95rem;
-    line-height: 1.4;
-  }
-  
+}
