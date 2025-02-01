@@ -19,12 +19,12 @@ const ProductSlider = () => {
   useEffect(() => {
     setIsMounted(true);
 
-    const threeWeeksAgo = new Date();
-    threeWeeksAgo.setDate(threeWeeksAgo.getDate() - 21);
+    const fiveWeeksAgo = new Date();
+    fiveWeeksAgo.setDate(fiveWeeksAgo.getDate() - 35); // 5 weeks = 35 days
 
     client
       .fetch(
-        `*[_type == "product" && _createdAt > $threeWeeksAgo] | order(_createdAt desc) {
+        `*[_type == "product" && _createdAt > $fiveWeeksAgo] | order(_createdAt desc) {
           _id,
           name,
           price,
@@ -33,7 +33,7 @@ const ProductSlider = () => {
           "brand": brand[0]->name,
           slug
         }`,
-        { threeWeeksAgo: threeWeeksAgo.toISOString() }
+        { fiveWeeksAgo: fiveWeeksAgo.toISOString() }
       )
       .then((data) => {
         setProducts(
