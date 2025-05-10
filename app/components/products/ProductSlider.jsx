@@ -20,7 +20,7 @@ const ProductSlider = () => {
     setIsMounted(true);
 
     const fiveWeeksAgo = new Date();
-    fiveWeeksAgo.setDate(fiveWeeksAgo.getDate() - 35); // 5 weeks = 35 days
+    fiveWeeksAgo.setDate(fiveWeeksAgo.getDate() - 365); // 5 weeks = 35 days
 
     client
       .fetch(

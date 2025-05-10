@@ -22,31 +22,31 @@ export const aboutData = {
       "Global Network: Collaborating with top brands ensures the best for you.",
     ],
     journey: `
-      Founded in [Year], Joe and Joe Store began with a vision to revolutionize the way retailers 
+      Founded in 1999, Joe and Joe Store began with a vision to revolutionize the way retailers 
       access quality bags. What started as a small operation has grown into a leading name in the 
       wholesale bag industry.
     `,
   },
   team: [
     {
-      name: "Josephine Emmanuel",
+      name: "Joseph Apeh",
       role: "Founder & Director",
-      image: "/josephine.jpg",
+      image: "/joe.png",
     },
     {
-      name: "Jonathan Emmanuel",
+      name: "Joshpine Apeh",
       role: "Co-Director",
-      image: "/jonathan.jpg",
+      image: "/joe.png",
     },
     {
-      name: "Sophia Adebayo",
-      role: "Operations Manager",
-      image: "/sophia.jpg",
+      name: "Chukwudi Mbanefo",
+      role: "Operation Manager",
+      image: "/josph.png",
     },
     {
-      name: "Samuel Johnson",
-      role: "Client Relations Manager",
-      image: "/samuel.jpg",
+      name: "Ikechukwu Apeh",
+      role: "Asistant Manager",
+      image: "/josph.png",
     },
   ],
 };

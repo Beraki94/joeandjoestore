@@ -1,4 +1,3 @@
-/* Swiper container settings */
 .brand-slider {
   width: 100%;
   padding: var(--spacing-3) 0;
@@ -10,23 +9,21 @@
   width: 100%;
 }
 
-/* Swiper slides */
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-shrink: 0;
-  overflow: hidden;
+  height: 100%;
 }
 
-/* Brand card styles */
+/* Card styling */
 .brand-card {
-  position: relative;
   width: 100%;
   max-width: 240px;
-  background-color: var(--neutral-white);
-  border: 1px solid var(--neutral-medium);
+  height: 320px;
+  position: relative;
   border-radius: var(--spacing-1);
+  overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -36,35 +33,52 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Entire card is clickable */
+.brand-card__image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image and overlay layer */
+.brand-card__image-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .brand-card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: var(--spacing-1);
+  display: block;
 }
 
-.brand-card__content{
+/* Overlay content (title + button) */
+.brand-card__content {
   position: absolute;
-  bottom: 10%;
-  left: 10%;
-}
-.brand-card__name {
-  font-weight: bold;
+  bottom: var(--spacing-3);
+  left: var(--spacing-3);
   color: var(--neutral-white);
+  z-index: 2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.brand-card__name {
+  font-size: var(--font-size-md);
+  font-weight: bold;
   margin-bottom: var(--spacing-1);
 }
 
 .brand-card__button {
   display: inline-block;
-  padding: var(--spacing-1) var(--spacing-3);
-  font-size: var(--font-size-md);
-  font-weight: 600;
-  color: var(--neutral-white);
+  padding: var(--spacing-1) var(--spacing-2);
   background-color: var(--primary-color);
-  border: none;
+  color: var(--neutral-white);
+  font-size: var(--font-size-sm);
   border-radius: var(--spacing-1);
   text-transform: uppercase;
-  text-decoration: none;
+  cursor: pointer;
   transition: background-color var(--transition), transform var(--transition);
 }
 
@@ -73,13 +87,12 @@
   transform: translateY(-2px);
 }
 
-/* Swiper navigation buttons */
+/* Swiper arrows */
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--neutral-dark);
   font-size: 1.5rem;
-  transition: color var(--transition);
-  top: 50%; /* Center the arrows vertically */
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -90,12 +103,17 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .brand-card {
+    max-width: 200px;
+    height: 280px;
+  }
 
   .brand-card__name {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-base);
   }
 
   .brand-card__button {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-1) var(--spacing-2);
   }
 }

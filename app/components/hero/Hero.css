@@ -6,25 +6,34 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 1px solid red;
   border-radius: var(--spacing-4);
 }
 
-.hero__video {
+.hero__background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -2;
+}
+
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(57, 58, 53, 0.70); /* Adjust darkness */
   z-index: -1;
 }
 
 .hero__content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center aligns all elements horizontally */
-  justify-content: center; /* Center aligns all elements vertically */
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 1;
   text-align: center;
@@ -36,30 +45,27 @@
   font-weight: bold;
   line-height: 1.3;
   margin-bottom: var(--spacing-3);
+  color: white;
 }
 
 .hero__btn {
-  display: inline-block; /* Ensures button takes only the size of its content */
-  padding: var(--spacing-2) var(--spacing-4); /* Adjusts inner spacing for better size */
-  font-size: var(--font-size-md); /* Keeps font size moderate (default: 16px) */
-  font-weight: 600; /* Adds a bold font for visibility */
-  color: var(--neutral-white); /* Ensures contrast for accessibility */
-  background-color: var(--primary-color); /* Primary button color */
+  display: inline-block;
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-top: 3rem;
+  color: var(--neutral-white);
+  background-color: var(--primary-color);
   border: none;
-  border-radius: var(--spacing-1); /* Slightly rounded corners */
+  border-radius: var(--spacing-1);
   text-align: center;
-  cursor: pointer; /* Makes the button clickable */
-  transition: var(--transition); /* Smooth hover effect */
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .hero__btn:hover {
-  background-color: var(--secondary-color); /* Slightly darker hover effect */
-  transform: scale(1.05); /* Subtle scaling for hover state */
-}
-
-.hero__loading {
-  font-size: var(--font-size-lg);
-  color: var(--neutral-dark);
+  background-color: rgb(125, 143, 66);
+  transform: scale(1.05);
 }
 
 /* Responsive Styles */
